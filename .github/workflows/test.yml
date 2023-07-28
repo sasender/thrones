@@ -20,14 +20,14 @@ jobs:
       - name: Triggering the Pipeline
         run: |
           echo "Triggering the Pipeline for Deployment."
-          sleep 1s
-      - uses: convictional/trigger-workflow-and-wait@v1.6.5
-        with:
-          owner: sasender
-          repo: PTaas_Jmeter
-          github_token: ${{ secrets.GIT_KEY }}
-          workflow_file_name: trigger_workflow.yml
+          #sleep 1s
+      #- uses: convictional/trigger-workflow-and-wait@v1.6.5
+       # with:
+        #  owner: sasender
+         # repo: PTaas_Jmeter
+         # github_token: ${{ secrets.GIT_KEY }}
+         # workflow_file_name: trigger_workflow.yml
           #workflow_file_name: develop.yml
-          trigger_workflow: true
-          ref: 'master'
+         # trigger_workflow: true
+         # ref: 'master'
           #client_payload: '{"tagID":"JMXData"}'
