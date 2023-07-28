@@ -1,0 +1,33 @@
+name: Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        description: Environment
+        required: true
+        options:
+        - JMXData
+      tagid:
+        description: 'Branch Name or Tag'
+        required: true
+
+jobs:
+  build:
+    name: Deploying the Branch ${{github.event.inputs.branch}} to Environment ${{github.event.inputs.name}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Triggering the Pipeline
+        run: |
+          echo "Triggering the Pipeline for Deployment."
+          sleep 1s
+      - uses: convictional/trigger-workflow-and-wait@v1.6.5
+        with:
+          owner: sasender
+          repo: PTaas_Jmeter
+          github_token: ${{ secrets.GIT_KEY }}
+          workflow_file_name: trigger_workflow.yml
+          #workflow_file_name: develop.yml
+          trigger_workflow: true
+          ref: 'master'
+          #client_payload: '{"tagID":"JMXData"}'
