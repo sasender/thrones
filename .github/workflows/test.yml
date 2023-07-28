@@ -15,13 +15,13 @@ jobs:
     - name: Commit and Push changes
       uses: ad-m/github-push-action@v1
       with:
-        repo: https://<PAT>@github.com/<username>/<repo>.git
+        repo: https://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@github.com/sasender/thrones.git
         branch: test
         message: 'Automated commit and push'
     - name: Push to branch2
       uses: ad-m/github-push-action@v1
       with:
-        repo: https://<PAT>@github.com/<username>/<repo>.git
+        repo: https://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@github.com/sasender/thrones.git
         branch: devlop
         message: 'Push to branch2'    
         
